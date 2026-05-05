@@ -1,0 +1,13 @@
+SELECT T.Nev FROM Termek T JOIN Vasarlas V ON T.TKod = V.Kod JOIN Vasarlo Va ON V.Azon = Va.VID WHERE Va.Nev = 'Fekete Péter';
+
+SELECT T.nev FROM Termek T JOIN Vasarlas V ON T.TKod = V.Kod;
+
+SELECT Nev FROM Termek WHERE TKod NOT IN (SELECT Kod FROM Vasarlas);
+
+SELECT COUNT(*) AS TermekekSzama FROM Termek;
+
+SELECT Nev, Ar FROM Termek WHERE Ar = (SELECT MAX(Ar) FROM Termek);
+
+Select COUNT(*) as VásárlásokSzáma from Vasarlas where kod = 't03';
+
+select sum(Darab) as OsszesDarab from Vasarlas where Kod = 't03';
